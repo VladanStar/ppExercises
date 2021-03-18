@@ -20,9 +20,22 @@ for( var i =0; i<a.length;i++){
 console.log(result);
 // ********************** Exercise 2 STARTS HERE **********************
 /* 
-Write a program that multiplies every positive element of a given array by 2.
-Input array: [-3, 11, 5, 3.4, -8]
-Output array: [-3, 22, 10, 6.8, -8]
-*/
+Write a program that will allow someone to guess a four digit pin exactly 4
+times. If the user guesses the number correctly. It prints “That was
+correct!” Otherwise it will print “Sorry that was wrong.” Program stops after the 4th attempt of if they got it right. */
+
 // *********** YOUR CODE HERE **********************
-a = [-3, 11, 5, 3.4, -8];
+
+var pin = 1234;
+var quess = [1325, 1728, 1244, 3363];
+
+for (var i = 0; i <= 4; i++ ) {
+    console.log('Input your PIN: ' + quess[i]);
+    if (quess[i] === pin) {
+        console.log('That was correct!');
+        break;                                              // break out of loop if true
+    }
+    else {
+        console.log('That was wrong');
+    }
+}
