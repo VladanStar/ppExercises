@@ -503,3 +503,31 @@ function isOdd(a) {
 var a = 90;
 var b = isOdd(a);
 console.log(b);
+
+/* 27. 
+Write a function that checks if a given number is a three digit long number.
+*/
+function checkThreeDigit(a) {
+  if (a > 99 && a < 1000) {
+    return "Number is three digit"
+  }
+  else {
+    return "Number is not three digit";
+  }
+}
+var a = 909;
+/* 28. 
+Write a function that calculates an arithmetic mean of four numbers.
+*/
+function arithMean(a) {
+  var st = "";
+  var sum = 0;
+  var st = a + st;
+  for (var i = 0; i < st.length; i++){
+    sum += parseInt(st[i]);
+  }
+  return sum;
+}
+var a = 3456;
+var b = arithMean(a);
+console.log(b);
