@@ -477,11 +477,9 @@ Write a function that calculates the maximum of two given numbers.
 function maxTwoNumbers(a, b) {
   if (a > b) {
     return a;
-  }
-  else if (a < b) {
+  } else if (a < b) {
     return b;
-  }
-  else {
+  } else {
     return "Equals";
   }
 }
@@ -495,8 +493,7 @@ Write a function that checks if a given number is odd.
 function isOdd(a) {
   if (a % 2 === 0) {
     return "even";
-  }
-  else {
+  } else {
     return "odd";
   }
 }
@@ -509,9 +506,8 @@ Write a function that checks if a given number is a three digit long number.
 */
 function checkThreeDigit(a) {
   if (a > 99 && a < 1000) {
-    return "Number is three digit"
-  }
-  else {
+    return "Number is three digit";
+  } else {
     return "Number is not three digit";
   }
 }
@@ -523,7 +519,7 @@ function arithMean(a) {
   var st = "";
   var sum = 0;
   var st = a + st;
-  for (var i = 0; i < st.length; i++){
+  for (var i = 0; i < st.length; i++) {
     sum += parseInt(st[i]);
   }
   return sum;
@@ -542,22 +538,20 @@ Write a function that draws a square of a given size.For example,  if the size o
 */
 function drawsSquare(a) {
   var firstAndLastRowa = "";
-  var middleRowa = ""
-  var starRow = ""
-  for (var i = 0; i < a; i++){
+  var middleRowa = "";
+  var starRow = "";
+  for (var i = 0; i < a; i++) {
     firstAndLastRowa += " *";
-
   }
   firstAndLastRowa += "\n";
-  for (var j = 0; j < a; j++){
-    if (j === 0 || j === (a - 1)) {
+  for (var j = 0; j < a; j++) {
+    if (j === 0 || j === a - 1) {
       middleRowa += " *";
-    }
-    else middleRowa += "  ";
+    } else middleRowa += "  ";
   }
   middleRowa += "\n";
 
-  for (var k = 0; k < a; k++){
+  for (var k = 0; k < a; k++) {
     if (k === 0 || k === a - 1) {
       starRow += firstAndLastRowa;
     } else {
@@ -579,8 +573,8 @@ Write a function that draws a square of a given size.For example,  if the size o
 function drawSquare(n) {
   var star = "";
   var star1 = "";
-  for (var i = 0; i < n; i++){
-    star += " *"
+  for (var i = 0; i < n; i++) {
+    star += " *";
     console.log(star);
   }
 }
@@ -595,33 +589,30 @@ function square(n1, n2, n3) {
   var starsRow1 = "";
   var starsRow2 = "";
   var starsRow3 = "";
-  for (var i = 0; i < n1; i++){
+  for (var i = 0; i < n1; i++) {
     starsRow1 += " *";
     if (i === n1) {
       starsRow1 += "\n";
     }
   }
-    for (var j = 0; j < n2; j++) {
-        starsRow2 += ' *'
-        if (j === n2) {
-            starsRow2 += '\n'
-        }
-
+  for (var j = 0; j < n2; j++) {
+    starsRow2 += " *";
+    if (j === n2) {
+      starsRow2 += "\n";
     }
-    for (var k = 0; k < n3; k++) {
-        starsRow3 += ' *'
-        if (k === n3) {
-            starsRow3 += '\n'
-        }
-
+  }
+  for (var k = 0; k < n3; k++) {
+    starsRow3 += " *";
+    if (k === n3) {
+      starsRow3 += "\n";
     }
-    console.log(starsRow1)
-    console.log(starsRow2)
-    console.log(starsRow3)
-
+  }
+  console.log(starsRow1);
+  console.log(starsRow2);
+  console.log(starsRow3);
 }
-var output = square(5, 3, 7)
-console.log(output)
+var output = square(5, 3, 7);
+console.log(output);
 
 /* 32. 
 Write a function that calculates a number of digits of a given number.
@@ -629,7 +620,7 @@ Write a function that calculates a number of digits of a given number.
 function calcNumber(number) {
   var numberString = number + "";
   var count = 0;
-  for (var i = 0; i < numberString.length; i++){
+  for (var i = 0; i < numberString.length; i++) {
     count++;
   }
   return count;
@@ -644,16 +635,48 @@ Write a function that calculates a number of appearances of a given number in a 
 function calcGiven(number, p) {
   var count = 0;
   var numString = number + "";
-  var pString = p 
-  for (var i = 0; i < numString.length; i++){
+  var pString = p;
+  for (var i = 0; i < numString.length; i++) {
     if (numString[i] == pString) {
       count++;
     }
-
   }
   return count;
 }
 var number = 3213324324;
 var p = 3;
 var output = calcGiven(number, p);
+console.log(output);
+/* 34. 
+Write a function that calculates the sum of odd elements of a given array.
+*/
+function calcSum(array) {
+  var sum = 0;
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] % 2 != 0) {
+      sum += array[i];
+    }
+  }
+    return sum;
+  }
+var array = [4, 5, 6, 7];
+  var output = calcSum(array);
+console.log(output);
+/* 35. 
+Write a function that calculates the number of appearances of a letter a in a given string.Modify the function so it calculates the number of both letters a and A.
+*/
+
+function calcString(string, letterUpperCase, letterLowerCase) {
+  var count = 0;
+  for (var i = 0; i<string.length; i++){
+    if (letterUpperCase === string[i] || letterLowerCase === string[i]) {
+      count++;
+    }
+  }
+  return count;
+}
+var string = 'blaBlabla';
+var letterUpperCase = 'B';
+var letterLowerCase = 'b';
+var output = calcString(string, letterUpperCase, letterLowerCase);
 console.log(output);
