@@ -531,3 +531,129 @@ function arithMean(a) {
 var a = 3456;
 var b = arithMean(a);
 console.log(b);
+
+/* 29.  
+Write a function that draws a square of a given size.For example,  if the size of square is 5 the function should draw: 
+*****
+*    *
+*    *
+*    *
+*****
+*/
+function drawsSquare(a) {
+  var firstAndLastRowa = "";
+  var middleRowa = ""
+  var starRow = ""
+  for (var i = 0; i < a; i++){
+    firstAndLastRowa += " *";
+
+  }
+  firstAndLastRowa += "\n";
+  for (var j = 0; j < a; j++){
+    if (j === 0 || j === (a - 1)) {
+      middleRowa += " *";
+    }
+    else middleRowa += "  ";
+  }
+  middleRowa += "\n";
+
+  for (var k = 0; k < a; k++){
+    if (k === 0 || k === a - 1) {
+      starRow += firstAndLastRowa;
+    } else {
+      starRow += middleRowa;
+    }
+  }
+  return starRow;
+}
+var output = drawsSquare(5);
+console.log(output);
+/* 30.
+Write a function that draws a square of a given size.For example,  if the size of square is 5 the function should draw: 
+*
+**
+***
+****
+*****
+*/
+function drawSquare(n) {
+  var star = "";
+  var star1 = "";
+  for (var i = 0; i < n; i++){
+    star += " *"
+    console.log(star);
+  }
+}
+var output = drawSquare(5);
+/* 31. 
+Write a function that draws a horizontal chart representing three given values.For example, if values are 5, 3, and 7, the function should draw:
+* * * * *
+* * *
+* * * * * * *
+*/
+function square(n1, n2, n3) {
+  var starsRow1 = "";
+  var starsRow2 = "";
+  var starsRow3 = "";
+  for (var i = 0; i < n1; i++){
+    starsRow1 += " *";
+    if (i === n1) {
+      starsRow1 += "\n";
+    }
+  }
+    for (var j = 0; j < n2; j++) {
+        starsRow2 += ' *'
+        if (j === n2) {
+            starsRow2 += '\n'
+        }
+
+    }
+    for (var k = 0; k < n3; k++) {
+        starsRow3 += ' *'
+        if (k === n3) {
+            starsRow3 += '\n'
+        }
+
+    }
+    console.log(starsRow1)
+    console.log(starsRow2)
+    console.log(starsRow3)
+
+}
+var output = square(5, 3, 7)
+console.log(output)
+
+/* 32. 
+Write a function that calculates a number of digits of a given number.
+*/
+function calcNumber(number) {
+  var numberString = number + "";
+  var count = 0;
+  for (var i = 0; i < numberString.length; i++){
+    count++;
+  }
+  return count;
+}
+var number = 10000;
+var output = calcNumber(number);
+console.log(output);
+
+/* 33. 
+Write a function that calculates a number of appearances of a given number in a given array.
+*/
+function calcGiven(number, p) {
+  var count = 0;
+  var numString = number + "";
+  var pString = p 
+  for (var i = 0; i < numString.length; i++){
+    if (numString[i] == pString) {
+      count++;
+    }
+
+  }
+  return count;
+}
+var number = 3213324324;
+var p = 3;
+var output = calcGiven(number, p);
+console.log(output);
