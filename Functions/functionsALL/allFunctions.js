@@ -696,7 +696,6 @@ function concatGivenString(string, n) {
 var output = concatGivenString(string, n);
 console.log(output);
 /* 37.
-
 Write a function to count vowels in a provided string. If you are  not aware of indexOf function, 
 try to use switch statement.
 */
@@ -714,4 +713,44 @@ function calculateS(string, wolf) {
   return count;
 }
 var output = calculateS(string, wolf);
+console.log(output);
+/* 38.
+Write a function that combines two arrays by alternatingly taking elements.
+[‘a’, ’b’, ’c’], [1, 2, 3] -> [‘a’, 1, ’b’, 2, ’c’, 3]
+*/
+function combines(a, b) {
+  var c = [];
+  for (var i = 0; i < a.length; i++){
+    c[c.length] = a[i];
+    c[c.length] = b[i];
+  }
+  return c;
+}
+var array1 = ['a', 'b', 'c'];
+var array2 = [1, 2, 3];
+var output = combines(array1, array2);
+console.log(output);
+/* 39. 
+Write a function that rotates a list by k elements.
+For example[1, 2, 3, 4, 5, 6] rotated by two becomes[3, 4, 5, 6, 1, 2]
+*/
+var array = [1, 2, 3, 4, 5, 6]
+var parameter = 2;
+
+function rotatingArray(array, parameter) {
+    var firstArray = [];
+    var newArrCount = 0;
+
+    for (var i = 0, j = 2; i < array.length && j < array.length; i++ , j++) {
+        firstArray[i] = array[j];
+        if (i === 0) {
+            firstArray[array.length - 2] = array[i]
+        } else if (i === 1) {
+            firstArray[array.length - 1] = array[i]
+        }
+    }
+
+    return firstArray
+}
+var output = rotatingArray(array, parameter);
 console.log(output);
