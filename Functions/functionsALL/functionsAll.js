@@ -718,7 +718,8 @@ var output = calculate(array)
 console.log(output)
 
 /*
-Write a function that calculates the number of appearances of a letter a in a given string.Modify the function so it calculates the number of both letters a and A.
+Write a function that calculates the number of appearances of a letter a in a given string.
+Modify the function so it calculates the number of both letters a and A.
 */
 
 var string = 'blaBlabla'
@@ -738,7 +739,8 @@ var output = calculate(string, letterUpperCase, letterLowerCase)
 console.log(output)
 
 /*
-Write a function that concatenates a given string given number of times.For example, if “abc” and 4 are given values, the function prints out abcabcabcabc.
+Write a function that concatenates a given string given number of times.
+For example, if “abc” and 4 are given values, the function prints out abcabcabcabc.
 */
 
 var string = 'abc'

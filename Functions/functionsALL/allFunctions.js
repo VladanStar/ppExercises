@@ -663,7 +663,8 @@ var array = [4, 5, 6, 7];
   var output = calcSum(array);
 console.log(output);
 /* 35. 
-Write a function that calculates the number of appearances of a letter a in a given string.Modify the function so it calculates the number of both letters a and A.
+Write a function that calculates the number of appearances of a letter a in a given string.
+Modify the function so it calculates the number of both letters a and A.
 */
 
 function calcString(string, letterUpperCase, letterLowerCase) {
@@ -679,4 +680,39 @@ var string = 'blaBlabla';
 var letterUpperCase = 'B';
 var letterLowerCase = 'b';
 var output = calcString(string, letterUpperCase, letterLowerCase);
+console.log(output);
+/* 36. 
+Write a function that concatenates a given string given number of times.
+For example, if “abc” and 4 are given values, the function prints out abcabcabcabc. 
+*/
+var string = "abc";
+var n = 4
+function concatGivenString(string, n) {
+  var newString = "";
+  for (var i = 0; i < n; i++){
+    newString += string;
+  }
+  return newString;
+}
+var output = concatGivenString(string, n);
+console.log(output);
+/* 37.
+
+Write a function to count vowels in a provided string. If you are  not aware of indexOf function, 
+try to use switch statement.
+*/
+var string = "bananamen";
+var wolf = "wolfs";
+function calculateS(string, wolf) {
+  var count = 0;
+  for (var i = 0; i < string.length; i++){
+    for (var j = 0; j < wolf.length; j++){
+      if (string[i] === wolf[j]) {
+        count++;
+      }
+    }
+  }
+  return count;
+}
+var output = calculateS(string, wolf);
 console.log(output);
