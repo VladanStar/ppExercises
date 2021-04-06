@@ -365,7 +365,6 @@ Output: The array isn’t symmetric.
 function hasSymmetry(nums) {
   var length = nums.length;
   var newLength = length / 2;
-
   var front = [];
   var back = [];
 
@@ -657,10 +656,10 @@ function calcSum(array) {
       sum += array[i];
     }
   }
-    return sum;
-  }
+  return sum;
+}
 var array = [4, 5, 6, 7];
-  var output = calcSum(array);
+var output = calcSum(array);
 console.log(output);
 /* 35. 
 Write a function that calculates the number of appearances of a letter a in a given string.
@@ -669,16 +668,16 @@ Modify the function so it calculates the number of both letters a and A.
 
 function calcString(string, letterUpperCase, letterLowerCase) {
   var count = 0;
-  for (var i = 0; i<string.length; i++){
+  for (var i = 0; i < string.length; i++) {
     if (letterUpperCase === string[i] || letterLowerCase === string[i]) {
       count++;
     }
   }
   return count;
 }
-var string = 'blaBlabla';
-var letterUpperCase = 'B';
-var letterLowerCase = 'b';
+var string = "blaBlabla";
+var letterUpperCase = "B";
+var letterLowerCase = "b";
 var output = calcString(string, letterUpperCase, letterLowerCase);
 console.log(output);
 /* 36. 
@@ -686,10 +685,10 @@ Write a function that concatenates a given string given number of times.
 For example, if “abc” and 4 are given values, the function prints out abcabcabcabc. 
 */
 var string = "abc";
-var n = 4
+var n = 4;
 function concatGivenString(string, n) {
   var newString = "";
-  for (var i = 0; i < n; i++){
+  for (var i = 0; i < n; i++) {
     newString += string;
   }
   return newString;
@@ -705,8 +704,8 @@ var string = "bananamen";
 var wolf = "wolfs";
 function calculateS(string, wolf) {
   var count = 0;
-  for (var i = 0; i < string.length; i++){
-    for (var j = 0; j < wolf.length; j++){
+  for (var i = 0; i < string.length; i++) {
+    for (var j = 0; j < wolf.length; j++) {
       if (string[i] === wolf[j]) {
         count++;
       }
