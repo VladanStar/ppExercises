@@ -720,13 +720,13 @@ Write a function that combines two arrays by alternatingly taking elements.
 */
 function combines(a, b) {
   var c = [];
-  for (var i = 0; i < a.length; i++){
+  for (var i = 0; i < a.length; i++) {
     c[c.length] = a[i];
     c[c.length] = b[i];
   }
   return c;
 }
-var array1 = ['a', 'b', 'c'];
+var array1 = ["a", "b", "c"];
 var array2 = [1, 2, 3];
 var output = combines(array1, array2);
 console.log(output);
@@ -734,23 +734,161 @@ console.log(output);
 Write a function that rotates a list by k elements.
 For example[1, 2, 3, 4, 5, 6] rotated by two becomes[3, 4, 5, 6, 1, 2]
 */
-var array = [1, 2, 3, 4, 5, 6]
-var parameter = 2;
+var array = [1, 2, 3, 4, 5, 6];
+var parameter = 4;
 
 function rotatingArray(array, parameter) {
-    var firstArray = [];
-    var newArrCount = 0;
+  var firstArray = [];
+  var newArrCount = 0;
 
-    for (var i = 0, j = 2; i < array.length && j < array.length; i++ , j++) {
-        firstArray[i] = array[j];
-        if (i === 0) {
-            firstArray[array.length - 2] = array[i]
-        } else if (i === 1) {
-            firstArray[array.length - 1] = array[i]
-        }
+  for (
+    var i = 0, j = parameter;
+    i < array.length && j < array.length;
+    i++, j++
+  ) {
+    firstArray[i] = array[j];
+    if (i === 0) {
+      firstArray[array.length - parameter] = array[i];
+    } else if (i === 1) {
+      firstArray[array.length - 1] = array[i];
     }
-
-    return firstArray
+  }
+  return firstArray;
 }
 var output = rotatingArray(array, parameter);
 console.log(output);
+/* 40.  
+Write a function that takes a number and returns array of its digits.
+*/
+var number = 1000;
+function convert(number) {
+  var numberInString = "" + number;
+  newArray = [""];
+  for (var i = 0; i < numberInString.length; i++) {
+    var element = numberInString[i];
+    newArray[i] = element;
+  }
+  return newArray;
+}
+var output = convert(number);
+console.log(output);
+/* 41.
+ Write a program that prints a multiplication table for numbers up to 12.
+*/
+function multipTable(a) {
+  var str = "";
+  for (var i = 1; i <= a; i++) {
+    for (var j = 1; j <= a; j++) {
+      str += " " + i * j;
+    }
+    str = str + "\n";
+  }
+  return str;
+}
+console.log(multipTable(12));
+/*42. 
+Write a function to input temperature in Centigrade and convert to Fahrenheit.
+*/
+
+var centigrade = 10;
+
+function convert(centigrade) {
+  var fahrenheit = (centigrade * 9) / 5 + 32;
+  return fahrenheit;
+}
+var output = convert(centigrade);
+console.log(output);
+/* 43.
+Write a function to find the maximum element in array of numbers.Filter out all non - number elements.
+*/
+function filterHighestNumber(array) {
+  var max = array[0];
+
+  for (var i = 0; i < array.length; i++) {
+    var element = array[i];
+    if (typeof element === "number") {
+      if (array[i] > max) {
+        max = array[i];
+      }
+    }
+  }
+  return max;
+}
+var array = [
+  false,
+  5,
+  54,
+  56,
+  876,
+  678,
+  "e,",
+  "blab",
+  "45345",
+  NaN,
+  undefined,
+  455445,
+  544554,
+];
+var output = filterHighestNumber(array);
+console.log(output);
+
+/* 44. 
+Write a function to find the maximum and minimum elements.Function returns an array.
+*/
+function minAdnMax(array) {
+  var max = [];
+  var min = [];
+  var minAdnMax = [];
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] !== false || array[i] !== undefined || array[i] !== NaN) {
+      max = array[i];
+      min = array[i];
+      break;
+    }
+  }
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] > max && typeof array[i] === "number") {
+      max = array[i];
+    }
+    if (array[i] < min && typeof array[i] === "number") {
+      min = array[i];
+    }
+  }
+  minAdnMax = [min, max];
+  return minAdnMax;
+}
+var array = [
+  false,
+  5,
+  54,
+  56,
+  876,
+  678,
+  "e,",
+  "blab",
+  "45345",
+  NaN,
+  undefined,
+  455445544554,
+];
+var output = minAdnMax(array);
+console.log(output);
+/*45. 
+Write a function to find the median element of array.
+*/
+function medina(array) {
+    var middleElement = (array.length - 1) / 2
+    if (array.length % 2 === 1) {
+        for (var i = 0; i < array.length; i++) {
+            var element = array[i]
+            if (i === middleElement) {
+                return element
+            }
+        }
+    }
+    console.log('no middle element')
+  return array;
+}
+var array = [false, 5, 54, 54, 56546]
+var output = medina(array)
+console.log(output)

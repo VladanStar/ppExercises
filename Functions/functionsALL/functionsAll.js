@@ -909,32 +909,43 @@ Write a function to find the maximum and minimum elements.Function returns an ar
 */
 
 function minAdnMax(array) {
-    var max = []
-    var min = []
-    var minAdnMax = []
-    for (var i = 0; i < array.length; i++) {
-        if (array[i] !== false || array[i] !== undefined || array[i] !== NaN) {
-            max = array[i];
-            min = array[i];
-            break;
-        }
+  var max = [];
+  var min = [];
+  var minAdnMax = [];
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] !== false || array[i] !== undefined || array[i] !== NaN) {
+      max = array[i];
+      min = array[i];
+      break;
     }
-    for (var i = 0; i < array.length; i++) {
-        if (array[i] > max && typeof (array[i]) === 'number') {
-            max = array[i]
-        }
-        if (array[i] < min && typeof (array[i]) === 'number') {
-            min = array[i]
-        }
-
+  }
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] > max && typeof array[i] === "number") {
+      max = array[i];
     }
-    minAdnMax = [min, max]
-    return minAdnMax
-
+    if (array[i] < min && typeof array[i] === "number") {
+      min = array[i];
+    }
+  }
+  minAdnMax = [min, max];
+  return minAdnMax;
 }
-var array = [false, 5, 54, 56, 876, 678, 'e,', 'blab', '45345', NaN, undefined, 455445544554]
-var output = minAdnMax(array)
-console.log(output)
+var array = [
+  false,
+  5,
+  54,
+  56,
+  876,
+  678,
+  "e,",
+  "blab",
+  "45345",
+  NaN,
+  undefined,
+  455445544554,
+];
+var output = minAdnMax(array);
+console.log(output);
 
 /*
 Write a function to find the median element of array.
