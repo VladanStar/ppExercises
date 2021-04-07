@@ -877,18 +877,44 @@ console.log(output);
 Write a function to find the median element of array.
 */
 function medina(array) {
-    var middleElement = (array.length - 1) / 2
-    if (array.length % 2 === 1) {
-        for (var i = 0; i < array.length; i++) {
-            var element = array[i]
-            if (i === middleElement) {
-                return element
-            }
-        }
+  var middleElement = (array.length - 1) / 2;
+  if (array.length % 2 === 1) {
+    for (var i = 0; i < array.length; i++) {
+      var element = array[i];
+      if (i === middleElement) {
+        return element;
+      }
     }
-    console.log('no middle element')
+  }
+  console.log("no middle element");
   return array;
 }
-var array = [false, 5, 54, 54, 56546]
-var output = medina(array)
-console.log(output)
+var array = [false, 5, 54, 54, 56546];
+var output = medina(array);
+console.log(output);
+/*46.
+Write a function to find the element that occurs most frequently.
+*/
+function mostFrequent(array) {
+  if (array.length === 0) {
+    return null;
+  }
+  var newArray = [];
+  var maxElement = array[0],
+    maxCount = 1;
+  for (var i = 0; i < array.length; i++) {
+    var element = array[i];
+    if (newArray[element] == null) {
+      newArray[element] = 1;
+    } else newArray[element]++;
+    //        newArray[element] = newArray[element] + 1;
+    if (newArray[element] > maxCount) {
+      maxElement = element;
+      maxCount = newArray[element];
+    }
+  }
+  return maxElement;
+}
+var array = ["pear", "apple", "orange", "apple"];
+var output = mostFrequent(array);
+console.log(output);
