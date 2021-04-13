@@ -992,15 +992,11 @@ function mostFrequent(array) {
             maxCount = newArray[element];
         }
     }
-
     return maxElement
 }
-
 var array = ['pear', 'apple', 'orange', 'apple'];
 var output = mostFrequent(array)
 console.log(output)
-
-
 /*
 Write a function to find and return the first, middle and last element of an array if the array has odd number of elements.
 If number of elements is even, return just the first and the last.In other cases(empty array), input array should be returned.

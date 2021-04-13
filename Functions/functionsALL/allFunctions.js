@@ -918,3 +918,231 @@ function mostFrequent(array) {
 var array = ["pear", "apple", "orange", "apple"];
 var output = mostFrequent(array);
 console.log(output);
+
+/*47. 
+Write a function to find and return the first, middle and last element of an array if the array has odd number of elements.
+If number of elements is even, return just the first and the last.In other cases(empty array), input array should be returned.
+*/
+function returnElementsOfArray(array) {
+  var result = [];
+  var firstElement = array[0];
+  var lastElement = array[array.length - 1];
+
+  var middleValue = (array.length - 1) / 2;
+  if (array.length % 2 === 0) {
+    return (result = [firstElement, lastElement]);
+  }
+  for (var i = 0; i < array.length; i++) {
+    var element = array[i];
+    if (array.length % 2 === 1) {
+      if (i === middleElement) {
+        var middleElement = element;
+        return (result = [firstElement, middleElement, lastElement]);
+      }
+    }
+  }
+}
+var array = [1, 2, 3, 4, 5, 6];
+var output = returnElementsOfArray(array);
+console.log(output);
+/*48. 
+Write a function to find the average of N elements.Make the function flexible to receive dynamic number or parameters.
+*/
+function average(array) {
+  var count = 0;
+  var averageSum = 0;
+  var result = 0;
+  for (var i = 0; i < array.length; i++) {
+    count++;
+    averageSum += array[i];
+  }
+  var resultOfAverageSum = averageSum / count;
+  return resultOfAverageSum;
+}
+var array = [1, 2, 3, 4, 5, 6, 7];
+var output = average(array);
+console.log(output);
+/*48. 
+Write a function to find all the numbers greater than the average.
+*/
+function greaterThanAverage(array) {
+  var count = 0;
+  var averageSum = 0;
+  var resultOfAverageSum = 0;
+  var listOfElementsGreaterThanAverageSum = [];
+  for (var i = 0; i < array.length; i++) {
+    count++;
+    averageSum += array[i];
+    resultOfAverageSum = averageSum / count;
+  }
+  for (var i = 0; i < array.length; i++) {
+    var element = array[i];
+    if (element > resultOfAverageSum) {
+      listOfElementsGreaterThanAverageSum += element;
+    }
+  }
+  return listOfElementsGreaterThanAverageSum;
+}
+var array = [1, 2, 3, 4, 5, 6];
+var output = greaterThanAverage(array);
+console.log(output);
+/*49. 
+The body mass index(BMI) is the ratio of the weight of a person(in kilograms) to the square of the height(in meters).Write a function that 
+takes two parameters, weight and height, computes the BMI, and prints the corresponding BMI category:
+Starvation: less than 15
+Anorexic: less than 17.5
+Underweight: less than 18.5
+Ideal: greater than or equal to 18.5 but less than 25
+Overweight: greater than or equal to 25 but less than 30
+Obese: greater than or equal to 30 but less than 40
+Morbidly obese: greater than or equal to 40
+*/
+
+function bmi(weight, height) {
+  var bmi = weight / (height * height);
+  console.log(bmi);
+  switch (true) {
+    case bmi < 15:
+      console.log("Anorexic");
+      break;
+    case bmi < 17.5 && bmi > 15:
+      console.log("Starvation");
+      break;
+    case bmi > 18.5 && bmi < 25:
+      console.log("Ideal");
+      break;
+    case bmi > 25 && bmi < 30:
+      console.log("Overweight");
+      break;
+    case bmi > 30 && bmi < 40:
+      console.log("Obese");
+      break;
+    case bmi > 40:
+      console.log("Morbidly");
+      break;
+    default:
+      console.log("bmi not in scope");
+  }
+}
+var weight = 80;
+var height = 1.8;
+/* 50.
+Write a function that takes a list of strings and prints them, one per line, in a rectangular frame.:
+For example the list["Hello", "World", "in", "a", "frame"] gets printed as:
+*********
+* Hello *
+* World *
+* in    *
+* a     *
+* frame *
+*********
+*/
+
+function printHelloWorld(array) {
+  var largest = [];
+  var counter = 0;
+  var firsAndLastRows = [];
+  var middleRows = [];
+  var square = [];
+  for (var i = 0; i < array.length; i++) {
+    if (array[i].length > counter) {
+      counter = array[i].length;
+      largest = array[i];
+    }
+  }
+
+  for (var i = 0; i < largest.length; i++) {
+    if (i === 0 || i === counter - 1) {
+      firsAndLastRows += "**";
+    }
+    firsAndLastRows += "*";
+  }
+  firsAndLastRows += "\n";
+
+  for (var i = 0; i < array.length; i++) {
+    var emptyStringArray = "";
+    if (array[i].length < counter) {
+      var empty = counter - array[i].length;
+      for (var j = 0; j < empty; j++) {
+        emptyStringArray += " ";
+      }
+    }
+    middleRows += "* " + array[i] + emptyStringArray + " *";
+    middleRows += "\n";
+  }
+
+  square = firsAndLastRows;
+  square += middleRows;
+  square += firsAndLastRows;
+
+  return square;
+}
+var array = ["Hello", "World", "in", "a", "frame"];
+var output = printHelloWorld(array);
+console.log(output);
+/* 51. 
+Write a program that creates a string that represents an 8×8 grid, using newline characters to separate lines. 
+At each position of the grid there is either a space or a "#" character. The characters should form a chess board.
+Passing this string to console.log should show something like this:
+ # # # #
+# # # # 
+ # # # #
+# # # # 
+ # # # #
+# # # # 
+ # # # #
+# # # #
+*/
+
+function chessBoard(parameter) {
+  var chessBoardRow = "";
+  var element = "";
+  var counter = 0;
+  for (var i = 0; i < parameter * parameter; i++) {
+    if (counter % 2 === 0) {
+      i % 2 === 0 ? (element = " ") : (element = "#");
+      chessBoardRow += element;
+    }
+    if (counter % 2 === 1) {
+      i % 2 === 1 ? (element = "#") : (element = " ");
+      chessBoardRow += element;
+    }
+    if (i % parameter === 0) {
+      chessBoardRow += "\n";
+    }
+    counter++;
+  }
+  // for (var i = 0; i < parameter; i++) {
+  //     (i % 2 === 0) ? element = ' ' : element = "#";
+  //     chessBoardRowEven += element;
+  // }
+  // chessBoardRowEven += '\n'
+
+  // for (var i = 0; i < parameter; i++) {
+  //     (i % 2 === 0) ? element = '#' : element = " ";
+  //     chessBoardRowOdd += element;
+  // }
+  // chessBoardRowOdd += '\n'
+
+  // for (var i = 0; i < parameter; i++) {
+  //     (i % 2 === 0) ? chessBoard += chessBoardRowEven : chessBoard += chessBoardRowOdd;
+  // }
+  return chessBoardRow;
+}
+function Person(name, surname, dateOfBirth) {
+    this.name = name;
+    this.surname = surname;
+    this.age = (function () {
+        var currentDate = new Date();
+        var currentYear = currentDate.getFullYear();
+ 
+        var birthDate = new Date(dateOfBirth);
+        var yearOfBirth = birthDate.getFullYear();
+ 
+        return currentYear - yearOfBirth;;
+    })();
+ 
+    this.getData = function () {
+        return this.name + " is " + this.age + " years old";
+    }
+ }
