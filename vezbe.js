@@ -1,0 +1,180 @@
+console.log(" TASK 0");
+var result = true;
+
+function subtract(first, second) {
+  return first - second;
+}
+
+result = subtract(12, -10);
+
+result = subtract(22, 2);
+
+console.log(result);
+//----------------------------------------- 1
+console.log(" TASK 1");
+'use strict';
+
+myVar = "random";
+
+function addOne(num) {
+   return num + 1;
+}
+
+var result = addOne(4);
+console.log(result);
+//-----------------------------------2 
+console.log(" TASK 2");
+var global = 123;
+
+var resetGlobal = function () {
+   global = -1;
+};
+
+console.log(global);
+//-----------------3-----------------
+console.log(" TASK 3");
+var global = 123;
+
+var resetGlobal = function () {
+   global = -1;
+};
+
+resetGlobal;
+console.log(global);
+//---------------------------4---------------------
+console.log(" TASK 4");
+var global = 123;
+
+var resetGlobal = function () {
+   global = arguments[0] || -1;
+};
+
+resetGlobal(10);
+console.log(global);
+
+resetGlobal(0);
+console.log(global);
+//-----------------5-------------------
+console.log(" TASK 5");
+'use strict';
+
+var result = square(10);
+console.log(result);
+
+function square(num) {
+   num *= num;
+}
+//---------------------6-----------------
+console.log(" TASK 6");
+'use strict';
+
+var result = square(10);
+console.log(result);
+
+function square(num) {
+  return num *= num;
+}
+//------------------7---------------
+console.log(" TASK 7");
+function toString(num) {
+   result = num + '';
+   return result;
+}
+
+console.log(result);
+//-----------------------8-----------------
+console.log(" TASK 8");
+function toString(num) {
+'use strict';
+   result = num + '';
+   return result;
+}
+
+toString(num);
+console.log(result);
+
+//----------------------9--------------------
+// console.log(" TASK 9");
+// var output = toString(0.15);
+// console.log(output);
+
+// var toString = function (num) {
+//    var result = num + '';
+//    return result;
+// }
+//------------------------10--------------------
+console.log(" TASK 10");
+var toString = function (num) {
+   var result = num + '';
+   return result;
+}
+
+var output = toString(0.15);
+console.log(output);
+//-------------------11----------------
+console.log(" TASK 11");
+var toString = function (num) {
+   num = num || '';
+   var result = num + '';
+   return result;
+}
+
+var output = toString;
+console.log(output);
+//---------------------12-----------------
+console.log(" TASK 12");
+// 'use strict';
+
+var global = parseInt("1e2");
+
+incrementGlobal = function () {
+   global++;
+};
+
+incrementGlobal();
+
+console.log(global);
+console.log(typeof global);
+//-------------------13======----
+console.log(" TASK 13");
+function sum(num1, num2) {
+   num1 = num1 || 0;
+   num2 = num2 || 0;
+
+   if (!num1 && !num2) {
+       return -1;
+   }
+
+   return num1 + num2;
+}
+
+var sumNumbers = sum;
+var result = sumNumbers();
+
+console.log(result);
+//--------------------------14---------------
+console.log(" TASK 14");
+// Example 14
+
+var x = 21;
+var girl = function () {
+   console.log(x);
+   var x = 20;
+};
+girl();
+//------------------------15---------------
+console.log(" TASK 15");
+// Example 15
+
+   function test() {
+       console.log(a);
+       console.log(foo());
+
+       var a = 1;
+       function foo() {
+           return 2;
+       }
+   }
+
+   test();
+//-------------------16--------------
