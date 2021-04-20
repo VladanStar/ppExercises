@@ -94,14 +94,14 @@ toString(num);
 console.log(result);
 
 //----------------------9--------------------
-// console.log(" TASK 9");
-// var output = toString(0.15);
-// console.log(output);
+console.log(" TASK 9");
+var output = toString(0.15);
+console.log(output);
 
-// var toString = function (num) {
-//    var result = num + '';
-//    return result;
-// }
+var toString = function (num) {
+   var result = num + '';
+   return result;
+}
 //------------------------10--------------------
 console.log(" TASK 10");
 var toString = function (num) {
@@ -123,7 +123,7 @@ var output = toString;
 console.log(output);
 //---------------------12-----------------
 console.log(" TASK 12");
-// 'use strict';
+ 'use strict';
 
 var global = parseInt("1e2");
 
@@ -178,3 +178,54 @@ console.log(" TASK 15");
 
    test();
 //-------------------16--------------
+function sqr(n){
+   var n;
+   n*=n;
+   return n;
+}
+
+function arraySqr (a, f){
+    for (i=0; i<a.length; i++) a[i]=f(a[i]);
+    return a;
+}
+
+console.log (arraySqr([1,2,3,4,5,6,7,8,9],sqr));
+
+//------------------------
+function sumOfDigits(n) {
+    var sum = 0;
+    var lastDigit;
+    if (typeof n != "number") {
+        return -1;
+    }
+    while (n > 0) {
+        lastDigit = n % 10;
+        n = (n - lastDigit) / 10;
+        sum = sum + lastDigit;
+
+    }
+    return sum;
+}
+console.log(sumOfDigits(481));
+typeof console.log;
+
+(function () {
+    return console.log;
+})()('boo');
+
+
+function test() {
+    return function () {
+        console.log('vladan')
+    }
+}
+var result = test();
+result();
+function m(a, b) {
+    var mR = a + b;
+    return function (a, b) {
+        return mR + a + b;
+    }
+}
+var ou = m(3, 4);
+console.log(ou())
