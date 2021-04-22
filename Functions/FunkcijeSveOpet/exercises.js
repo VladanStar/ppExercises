@@ -385,4 +385,17 @@ console.log(firstFewChar(5, "vladan cupric"));
 non-numeric values.
 ["1", "21", undefined, "42", "1e+3", Infinity] -> [1, 21, 42, 1000]
 */
-
+function convert(array) {
+  var newArray = [];
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] === "undefined" || array[i] === "Infinity") {
+      newArray[i] = array[i+1];
+    }
+    else {
+      newArray[i] = Number(array[i]);
+    }
+  }
+  return newArray;
+}
+var array = ["1", "21", undefined, "42", "1e+3", Infinity];
+console.log(convert(array));
