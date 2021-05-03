@@ -58,3 +58,11 @@ aleksandar.music = {
 };
 
 console.log(aleksandar);
+var person = {
+  name: "Vladan",
+  afe: 48,
+  gender: "male",
+  displayName: function () {
+    alert(this.name);
+  }
+};

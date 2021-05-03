@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>JavaScript Object</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+        var book = {
+            "name":"Harry Potter and the Goblet of Fire",
+            "author": "J.K.Rowling",
+            "year":2000
+        };
+        //Tacka notacija
+        document.write(book.name + "<br>");
+        document.write(book.author + "<br>");
+        document.write(book.year);
+        document.write("<hr>");
+        // uglaste zagrade notacija
+        document.write(book["name"] + "<br>");
+        document.write(book["author"] + "<br>");
+        document.write(book["year"]+ "<br>");
+    </script>
+    
+</body>
+</html>
