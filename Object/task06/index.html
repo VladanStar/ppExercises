@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>JavaScript Object 06</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+
+        var person ={
+            firstName: "Vladan",
+            lastName: "Cupric",
+            age: 48,
+            gender: "male",
+        };
+        // postavljanje novog svojstva
+        person.country = "Serbia";
+        document.write(person.country + "<br>");
+        person["email"] = "vladancupric@gmail.com";
+        document.write(person.email+ "<br>");
+        // Azuriranje postojecih svojstava
+        person.age= 49;
+        document.write(person.age + "<br>");
+        person["firstName"] = "Vladan R";
+        document.write(person.firstName);
+        delete person.age;
+        alert(person.age);
+    </script>
+</body>
+</html>
