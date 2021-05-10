@@ -227,5 +227,13 @@ function m(a, b) {
         return mR + a + b;
     }
 }
-var ou = m(3, 4);
-console.log(ou())
+
+var ary = ['three', 'seven', 'eleven'];
+
+// Remove item 'seven' from array
+var filteredAry = ary.filter(function (e) { return e !== 'seven' })
+//=> ["three", "eleven"]
+
+// In ECMA6 (arrow function syntax):
+var filteredAry = ary.filter(e => e !== 'seven');
+console.log(filteredAry);
