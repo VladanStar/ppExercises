@@ -66,3 +66,31 @@ piza.preparingTime = 22;
 console.log(piza.is15M(22));
 
 console.log(piza);
+
+/*3. Write a function that creates an object that represents a project. Each project is
+described by: description, programming language, git repository, boolean status that
+says if the project is in development or not. Add a method that prints out the project's
+repository, a method that checks if the project is written in JavaScript as well as a
+method that checks if the project is in development or not. */
+
+function CreateProject(desc, lang, gitUrl, isDev) {
+  this.desc = desc;
+  this.lang = lang;
+  this.gitUrl = gitUrl;
+  this.isDev = isDev;
+  this.printRepo = function (gitUrl) {
+    console.log(gitUrl);
+  };
+  this.isJavaScript = function (lang) {
+    return lang === "JavaScript";
+  };
+  this.isDevelopment = function (isDev) {
+    return isDev
+      ? "project is in development"
+      : "project is not in development";
+  };
+}
+var calculator = new CreateProject("calculator", "Java", "http:gitUrl", true);
+calculator.isDev = false;
+console.log(calculator);
+console.log(calculator.isDevelopment());
