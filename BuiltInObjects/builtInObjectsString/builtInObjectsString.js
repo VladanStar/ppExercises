@@ -161,7 +161,7 @@ String.raw()
 The static String.raw() method is a tag function of template literals. This is similar to the r prefix in Python, or the @ prefix in C# for string literals. (But it is not identical; see explanations in this issue.) It's used to get the raw string form of template literals, that is, substitutions (e.g. ${foo}) are processed, but escapes (e.g. \n) are not.
 */
 var string = "vladan";
-var filePath = string.raw(`https://github.com/VladanStar`);
+var filePath = String.raw`C:\Development\profile\aboutme.html`;
 console.log(filePath);
 /*
 String.prototype.repeat()
@@ -202,7 +202,8 @@ replaceAll(substr, replacerFunction)
 var p =
   "The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?";
 
-console.log(p.replaceAll("dog", "monkey"));
+// console.log(p.replaceAll("dog", "monkey"));
+console.log(p.replaceAll('dog', 'monkey'));
 /* 
 String.prototype.search()
 The search() method executes a search for a match between a regular expression and this String object.
