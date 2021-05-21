@@ -2,6 +2,12 @@
 String.prototype.split()
 The split() method divides a String into an ordered list of substrings, puts these substrings into an array, and returns the array.  The division is done by searching for a pattern; where the pattern is provided as the first parameter in the method's call.  
 */
+/* 
+split()
+split(separator)
+split(separator, limit)
+The pattern describing where each split should occur.  The separator can be a simple string or it can be a regular expression.
+*/
 var str = "The quick brown fox jumps over the lazy dog.";
 var words = str.split(" "); // words
 console.log(words[2]);
@@ -11,12 +17,7 @@ console.log(chars);
 console.log(chars[7]);
 var strCopy = str.split();
 console.log(strCopy); // copy string in new string
-/* 
-split()
-split(separator)
-split(separator, limit)
-The pattern describing where each split should occur.  The separator can be a simple string or it can be a regular expression.
-*/
+
 var sep = str.split(" ", 4); // four elements in array
 console.log(sep);
 var dot = str.split("."); // if dot in end return two elements in aray.
@@ -159,8 +160,8 @@ console.log(maskedNumber);
 String.raw()
 The static String.raw() method is a tag function of template literals. This is similar to the r prefix in Python, or the @ prefix in C# for string literals. (But it is not identical; see explanations in this issue.) It's used to get the raw string form of template literals, that is, substitutions (e.g. ${foo}) are processed, but escapes (e.g. \n) are not.
 */
-var string = "vladan ";
-var filePath = String.raw(`https://github.com/VladanStar`);
+var string = "vladan";
+var filePath = string.raw(`https://github.com/VladanStar`);
 console.log(filePath);
 /*
 String.prototype.repeat()
