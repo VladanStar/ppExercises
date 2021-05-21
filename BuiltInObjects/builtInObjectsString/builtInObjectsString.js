@@ -138,7 +138,7 @@ padEnd(targetLength)
 padEnd(targetLength, padString)
 */
 var str1 = "Breaded Mushrooms";
-console.log(str1.padEnd(25),".");
+console.log(str1.padEnd(25), ".");
 var str2 = "200";
 console.log(str2.padEnd(5));
 /* 
@@ -170,3 +170,160 @@ repeat(count)
 */
 var string = "nesto";
 console.log(string.repeat(9));
+/* 
+String.prototype.replace()
+The replace() method returns a new string with some or all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match. If pattern is a string, only the first occurrence will be replaced.
+
+The original string is left unchanged.
+Syntax
+replace(regexp, newSubstr)
+replace(regexp, replacerFunction)
+
+replace(substr, newSubstr)
+replace(substr, replacerFunction)
+*/
+var p =
+  "The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?";
+console.log(p.replace("dog", "cat"));
+var regex = /Dog/i;
+console.log(p.replace(regex, "cat"));
+
+/* 
+String.prototype.replaceAll()
+The replaceAll() method returns a new string with all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match.
+The original string is left unchanged.
+replaceAll(regexp, newSubstr)
+replaceAll(regexp, replacerFunction)
+
+replaceAll(substr, newSubstr)
+replaceAll(substr, replacerFunction)
+*/
+var p =
+  "The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?";
+
+console.log(p.replaceAll("dog", "monkey"));
+/* 
+String.prototype.search()
+The search() method executes a search for a match between a regular expression and this String object.
+Syntax
+search(regexp)
+*/
+var paragraph =
+  "The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?";
+var regex = /[^\W\s]/g;
+console.log(paragraph.search(regex));
+console.log(paragraph[paragraph.search(regex)]);
+/* 
+String.prototype.slice()
+The slice() method extracts a section of a string and returns it as a new string, without modifying the original string.
+Syntax
+slice(beginIndex)
+slice(beginIndex, endIndex)
+*/
+var str = "The quick brown fox jumps over the lazy dog.";
+console.log(str.slice(31));
+console.log(str.slice(4, 12));
+console.log(str.slice(-9, -4));
+/*
+String.prototype.split()
+The split() method divides a String into an ordered list of substrings, puts these substrings into an array, and returns the array.  The division is done by searching for a pattern; where the pattern is provided as the first parameter in the method's call.  
+Syntax
+split()
+split(separator)
+split(separator, limit)
+*/
+var str = "The quick brown fox jumps over the lazy dog.";
+var words = str.split(" ");
+console.log(words[3]);
+var chars = str.split(" ");
+console.log(words[8]);
+var strCopy = str.split();
+console.log(strCopy);
+/*
+String.prototype.startsWith()
+The startsWith() method determines whether a string begins with the characters of a specified string, returning true or false as appropriate.
+Syntax
+startsWith(searchString)
+startsWith(searchString, position)
+*/
+var str1 = "Saturday night plans";
+console.log(str1.startsWith("Sat"));
+console.log(str1.startsWith("Sat", 8));
+console.log(str1.startsWith("Vladan"));
+/*
+String.prototype.substring()
+The substring() method returns the part of the string between the start and end indexes, or to the end of the string.
+*/
+var str = "Mozilla";
+console.log(str.substring(3, 5));
+console.log(str.substring());
+/*
+String.prototype.toLowerCase()
+The toLocaleLowerCase() method returns the calling string value converted to lower case, according to any locale-specific case mappings.
+toLocaleLowerCase()
+*/
+var dotted = "istanbul";
+console.log(dotted.toLowerCase("en -US"));
+console.log(dotted.toLowerCase());
+/* 
+String.prototype.toLowerCase()
+The toLowerCase() method returns the calling string value converted to lower case.
+*/
+var dotted = "istanbul";
+console.log(dotted.toUpperCase());
+console.log(dotted.toLowerCase("en-US"));
+/*
+String.prototype.toString()
+The toString() method returns a string representing the specified object.
+Syntax
+toString()
+*/
+var stringObj = new String("vladan");
+console.log(stringObj);
+console.log(stringObj.toString());
+/* 
+String.prototype.trim()
+The trim() method removes whitespace from both ends of a string. Whitespace in this context is all the whitespace characters (space, tab, no-break space, etc.) and all the line terminator characters (LF, CR, etc.).
+*/
+var greeting = " Hello World  ";
+console.log(greeting.trim());
+/* 
+String.prototype.trimEnd()
+The trimEnd() method removes whitespace from the end of a string. trimRight() is an alias of this method.
+Syntax
+trimEnd()
+trimRight()
+*/
+var greeting = "   Hello world!   ";
+
+console.log(greeting);
+// expected output: "   Hello world!   ";
+
+console.log(greeting.trimEnd());
+/*
+String.prototype.trimStart()
+The trimStart() method removes whitespace from the beginning of a string. trimLeft() is an alias of this method.
+Syntax
+trimStart()
+trimLeft()
+*/
+var greeting = "   Hello world!   ";
+
+console.log(greeting);
+// expected output: "   Hello world!   ";
+
+console.log(greeting.trimStart());
+// expected output: "Hello world!   ";
+/*
+String.prototype.valueOf()
+The valueOf() method returns the primitive value of a String object.
+Syntax
+valueOf()
+*/
+var stringObj = new String("foo");
+
+console.log(stringObj);
+// expected output: String { "foo" }
+
+console.log(stringObj.valueOf());
+// expected output: "foo"
