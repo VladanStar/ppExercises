@@ -13,7 +13,7 @@
       return this.name + " " + this.odds + " " + this.continent;
     };
   }
-  var continent = Object.freeze({
+  var continent = {
     EUROPA: "EU",
     ASIA: "AS",
     SAUTH_AMERICA: "SA",
