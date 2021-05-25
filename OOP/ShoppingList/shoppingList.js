@@ -27,7 +27,8 @@
     };
     /*!!!*/ this.getAveragePrice = function () {
       this.averagePrice = 0;
-      /* !!!! da bi radilo this unutar drugog objekta, a da se odnosi na konstruktor, moramo da stavimo dodatno callback-funkciju => */
+      /* !!!! da bi radilo this unutar drugog objekta, a da se odnosi na konstruktor, 
+      moramo da stavimo dodatno callback-funkciju => */
       this.list.forEach((element, index) => {
         this.averagePrice += this.list[index].price;
       });
