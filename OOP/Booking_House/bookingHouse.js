@@ -19,7 +19,7 @@
     SAUTH_AMERICA: "SA",
     NORT_AMERICA: "NA",
     AUSTRALIA: "AU",
-  });
+  };
 
   ////////// PERSON ////////////////////
   // Person - name, surname, date of birth
