@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>JavaScript Umetanje HTML bez zamjene postojećeg sadržaja</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <!-- beforebegin -->
+    <div id="main">
+        <!-- aferbegin -->
+        <h1 id="title">Hello World</h1>
+        <!-- beforeend-->
+    </div>
+    <!--afterend-->
+    <button type="button" onclick="insertContent()">Umetanje sadrazaja</button>
+
+    <script>
+        function insertContent(){
+            //Odabir ciljnog elementa
+            var mainDiv = document.getElementById("main");
+            // Umetanje HTML-a neposredno prije samog elementa
+            mainDiv.insertAdjacentHTML('afterbegin','<p>Ovo je prvi paragraf</p>');
+            // Umetanje HTML-a neposredno unutar elementa, prije njegovog prvog podređenog
+    mainDiv.insertAdjacentHTML('afterbegin', '<p>Ovo je drugi paragraf.</p>');
+     
+     // Umetanje HTML-a unutar elementa, nakon njegovog posljednjeg podređenog
+     mainDiv.insertAdjacentHTML('beforeend', '<p>Ovo je treći paragraf.</p>');
+      
+     // Umetanje HTML-a neposredno nakon samog elementa, kao sljedećeg podređenog
+     mainDiv.insertAdjacentHTML('afterend', '<p>Ovo je četvrti paragraf.</p>');
+        }
+    </script>
+    
+</body>
+</html>

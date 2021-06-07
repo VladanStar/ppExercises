@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>JavaScript Get Set Inner HTML elemenata</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <div id="main">
+        <h1 id="title">Hello World</h1>
+        <p id="hint">Ovo je jednostavan paragraf</p>
+
+    </div>
+    <button type="button" onclick="getcontents()">Nabavite sadrzaj</button>
+    <button type="button" onclick="setContents()">Postavite sadrzaj</button>
+    <script>
+        function getcontents(){
+        //Dodavanje inner HTML sadrzaja
+        var contents = document.getElementById("main").innerHTML;
+        alert(contents);
+        }
+        function setContents(){
+            var mainDiv = document.getElementById("main");
+        mainDiv.innerHTML = "<p>Ovo je <em>novo ugrađeni</em> paragraf.</p>";
+        }
+        
+    </script>
+    
+</body>
+</html>
