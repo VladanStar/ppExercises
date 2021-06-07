@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JS classList Demo</title>
+<style>
+    .highlight {
+        background: yellow;
+    }
+</style>
+</head>
+<body>
+    <div id="info" class="disabled">Nešto veoma VAŽNO!!!</div>
+    
+    <script>
+    // Odabir elementa
+    var elem = document.getElementById("info");
+     
+    elem.classList.add("hide");  // Dodavanje nove klase
+    elem.classList.add("note", "highlight");  // Dodavanje više klasa
+    elem.classList.remove("hide"); // Uklanjanje klase
+    elem.classList.remove("disabled", "note"); // Uklanjanje više klasa
+    elem.classList.toggle("visible"); // Ako klasa postoji, uklonite je, ako ne dodajte je
+     
+    // Utvrđivanje postojanja klase
+    if(elem.classList.contains("highlight")) {
+        alert("Navedena klasa postoji na elementu.");
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Odabir elemenata pomoću CSS selektora</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <ul>
+        <li>Hleb</li>
+        <li class="tick">Kafa</li>
+        <li>Kolac</li>
+    </ul>
+    <script>
+        // odabir svih li elemenata
+        var matches = document.querySelectorAll("ul li");
+        // Ispis sadrzaja izabranih li elemenata
+        for(var elem of matches){
+            document.write(elem.inerHTML + "<br>");
+        }
+        // Primena crte kroz stil na prvi li element pomocu oznake kalsa
+        matches = document.querySelectorAll("ul li.tick");
+        matches[0].style.textDecoration = "line-through";
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JS Dodajte ili zamijenite CSS klasu DEMO</title>
+<style>
+    .highlight {
+        background: yellow;
+    }
+</style>
+</head>
+<body>
+    <div id="info" class="disabled">Nešto veoma VAŽNO!!!</div>
+        
+    <script>
+    // Odabir elementa
+    var elem = document.getElementById("info");
+    
+    elem.className = "note";  // Dodajte ili zamijenite sve klase (class) sa note class
+    elem.className += " highlight";  // Dodavanje nove istaknute klase (class)
+    </script>
+</body>
+</html>

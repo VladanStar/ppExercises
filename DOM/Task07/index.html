@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Odabir elemenata prema nazivu oznake</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <p>Ovo je paragraf.</p>
+    <div class="test">Ovo je neki drugi paragraf</div>
+    <p>Ovo je jos neki paragraf</p>
+
+    <script>
+        // Odabir svih elemenata paragrafa (pasusa)
+        var matches = document.getElementsByTagName("p");
+        // Ispis broja odabranih elemeatata taga
+        document.write("Broj odabranih elemenata: " + matches.length);
+        // isticanje pozadine svakog paragrafa kroz petlju
+       for (var elem in matches) {
+           matches[elem].style.background = "lightblue";
+           
+       }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Pristup elementu body s druge lokacije</title>
+    <script>
+        document.write("From HEAD: " + document.body); // Ispisuje: null (budući da <body> još nije raščlanjen)
+    </script>
+</head>
+<body>
+    <hr>
+    <script>
+        document.write("From BODY: " + document.body); // Ispisuje: HTMLBodyElement
+    </script>
+</body>
+</html>

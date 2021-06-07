@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>JS  Dobijanje izračunatih informacija stila DEMO</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style type="text/css">
+    #intro {
+        font-weight: bold;
+        font-style: italic;
+    }
+    </style>
+</head>
+<body>
+    <p id="intro" style="color: red; font-size: 20px;">Ovo je paragraf</p>
+    <p>Ovo je drugi paragraf</p>
+    <script>
+        // Odabir elemenata
+        var elem = document.getElementById("intro");
+        var styles = window.getComputedStyle(elem);
+        alert(styles.getPropertyValue("color"));
+        alert(styles.getPropertyValue("font-size"));  // Ispisuje: 20px
+    alert(styles.getPropertyValue("font-weight"));  // Ispisuje: 700
+    alert(styles.getPropertyValue("font-style"));  // Ispisuje: italic
+    </script>
+
+    
+</body>
+</html>

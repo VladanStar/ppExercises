@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style-type: none;
+  width: auto;
+  margin: 100px;
+  text-align: center;
+  box-shadow: 0 0 8px;
+}
+
+li {
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #ddd;
+  border-radius: 5px;
+}
+.color-li {
+  background-color: violet;
+}
+
+.color-and-text-li {
+  background-color: darkcyan;
+  text-transform: uppercase;
+}
