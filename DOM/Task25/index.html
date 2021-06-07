@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Dobijanje prethodnog i narednog čvora</title>
+</head>
+<body>
+    <div id="main">
+    <h1 id="title">Naslov</h1>
+    <p id="hint"><span>Ovo je neki tekst.</span></p><hr>
+  </div>
+  
+  <script>
+  var title = document.getElementById("title");
+  console.log(title.previousSibling.nodeName); // Ispisuje: #text
+  
+  var hint = document.getElementById("hint");
+  console.log(hint.nextSibling.nodeName); // Ispisuje: HR
+  </script>
+</body>
+</html>
