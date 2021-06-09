@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+​
+    <p id="ovde">Ovde dropdown</p>
+        
+​
+    <ul id="lista">
+        <li id="prvi">prvi</li>
+        <li>drugi</li>
+        <li id='treci'>treci</li>
+    </ul>
+    <button onclick="changeText('nesto')">CHANGE</button>
+    <button onclick="changeLastText('promeniposlednji')">CHANGELAST</button>
+    <button onclick="getLi()">ALERT</button>
+    <button onclick="insertDropDown(['car', 'bike', 'plane'], 'ovde')">UBACI DROPDOWN</button>
+​
+    <h1>FORM CHECK</h1>
+    <br>
+​
+    <p>Text Input</p>
+        <form id="form">
+        <input id="name" type="text" name="username" size="15" max length="30" required autofocus>
+        <br>
+​
+        <p>Password Input</p>
+        <input id="password" type="password" name="password" size="15" maxlength="30" required>
+        <br>
+​
+        <p>E-mail Input</p>
+        <input id="email" type="email" name="someemail">
+        <br>
+​
+        <p>Date Input</p>
+        <input id="date" type="date" name="somedate">
+        <br>
+​
+        <p>URL input</p>
+        <input id="url" type="url" name="address">
+        <br>
+​
+        <p>Search Input</p>
+        <input id="search" type="s   earch" name="keywordsearch" placeholder="Enter keyword here...">
+        <br>   
+​   
+        <button onclick="checkForm   ()">CHECK</button>
+        </form>
+        
+​
+    <script src="main.js"></script>
+</body>
+</html>
