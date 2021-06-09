@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>JavaScript Rukovanje događajem promjene veličine</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+        function displayWindowSize(){
+            var w = window.outerWidth;
+            var h = window.outerHeight;
+       
+            var txt = "Window size: width = " + w + ", height=" +h;
+            document.getElementById("result").innerHTML = txt;
+        }
+     window.onresize = displayWindowSize;
+    </script>
+    <p>
+        <strong>Napomena: </strong>
+        Promenite velicinu prozora pretrazivaca da biste videli kako funkcionise dogadjaj promene
+    </p>
+</body>
+</html>
