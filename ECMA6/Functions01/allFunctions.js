@@ -305,17 +305,17 @@ console.log(checkingNumber(2345));
 /*26. 
 Write a function that calculates an arithmetic mean of four numbers.
 */
-let arithmeticMean =number =>{
+let arithmeticMean = (number) => {
   let string = number.toString();
-  let array = string.split('');
- let len = array.length;
-  let sum =0;
-  for(let i =0; i<array.length;i++){
+  let array = string.split("");
+  let len = array.length;
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
     sum += parseInt(array[i]);
   }
-  let avg = sum/len;
-return avg;
-}
+  let avg = sum / len;
+  return avg;
+};
 console.log(arithmeticMean(3456));
 
 /*27. 
@@ -326,29 +326,28 @@ Write a function that draws a square of a given size.For example,  if the size o
 *    *
 *****
 */
-let  square = (parameter)=> {
-  let firsAndLastRows = ''
-  let middleRows = ''
-  let starsRow = ''
+let square = (parameter) => {
+  let firsAndLastRows = "";
+  let middleRows = "";
+  let starsRow = "";
   for (let i = 0; i < parameter; i++) {
-      firsAndLastRows += ' *'
+    firsAndLastRows += " *";
   }
-  firsAndLastRows += '\n'
+  firsAndLastRows += "\n";
   for (let j = 0; j < parameter; j++) {
-
-      if (j === 0 || j === (parameter - 1)) {
-          middleRows += ' *'
-      } else middleRows += '  '
+    if (j === 0 || j === parameter - 1) {
+      middleRows += " *";
+    } else middleRows += "  ";
   }
-  middleRows += '\n'
+  middleRows += "\n";
   for (let k = 0; k < parameter; k++) {
-      if (k === 0 || k === parameter - 1) {
-          starsRow += firsAndLastRows;
-      } else starsRow += middleRows
+    if (k === 0 || k === parameter - 1) {
+      starsRow += firsAndLastRows;
+    } else starsRow += middleRows;
   }
-  return starsRow
-}
-let output = square(5)
+  return starsRow;
+};
+let output = square(5);
 console.log(output);
 
 /*
@@ -360,14 +359,14 @@ Write a function that draws a square of a given size.For example,  if the size o
 ****
 *****
 */
-let square = (parameter) =>{
-  let stars = ''
-  let stars1 = ''
+let square = (parameter) => {
+  let stars = "";
+  let stars1 = "";
   for (let i = 0; i < parameter; i++) {
-      stars += ' *'
-      console.log(stars)
+    stars += " *";
+    console.log(stars);
   }
-}
+};
 let output = square(5);
 
 /*29. 
@@ -377,42 +376,148 @@ Write a function that draws a horizontal chart representing three given values.F
 * * * * * * *
 */
 
-let square = (n1, n2, n3)=> {
-  let starsRow1 = ''
-  let starsRow2 = ''
-  let starsRow3 = ''
+let square = (n1, n2, n3) => {
+  let starsRow1 = "";
+  let starsRow2 = "";
+  let starsRow3 = "";
   for (let i = 0; i < n1; i++) {
-      starsRow1 += ' *'
-      if (i === n1) {
-          starsRow1 += '\n'
-      }
+    starsRow1 += " *";
+    if (i === n1) {
+      starsRow1 += "\n";
+    }
   }
   for (let j = 0; j < n2; j++) {
-      starsRow2 += ' *'
-      if (j === n2) {
-          starsRow2 += '\n'
-      }
+    starsRow2 += " *";
+    if (j === n2) {
+      starsRow2 += "\n";
+    }
   }
   for (let k = 0; k < n3; k++) {
-      starsRow3 += ' *'
-      if (k === n3) {
-          starsRow3 += '\n'
-      }
+    starsRow3 += " *";
+    if (k === n3) {
+      starsRow3 += "\n";
+    }
   }
-  console.log(starsRow1)
-  console.log(starsRow2)
-  console.log(starsRow3)
-}
-let output = square(5, 3, 7)
-console.log(output)
+  console.log(starsRow1);
+  console.log(starsRow2);
+  console.log(starsRow3);
+};
+let output = square(5, 3, 7);
+console.log(output);
 
 /*30.
 Write a function that calculates a number of digits of a given number.
 */
 
-let numberDig = number => {
-  let numberString = number+"";
+let numberDig = (number) => {
+  let numberString = number + "";
   return numberString.length;
-}
+};
 console.log(numberDig(100000));
 
+/*31.
+Write a function that calculates a number of appearances of a given number in a given array.
+*/
+
+let calculate = (number, parameter) => {
+  let counter = 0;
+  let numberString = "" + number;
+  let parameterString = "" + parameter;
+  for (let i = 0; i < numberString.length; i++) {
+    if (numberString[i] == parameterString) {
+      counter++;
+    }
+  }
+  return counter;
+};
+console.log(calculate(3213324324,5));
+
+/*32.
+Write a function that calculates the sum of odd elements of a given array.
+*/
+
+let sum = array => {
+  let newArray = array.filter(function(element, array){
+    return element %2 !==0;
+  });
+  return newArray.reduce((total, arg) =>total+arg,0)
+}
+console.log(sum([1,2,3,4,5]));
+
+/*33. 
+Write a function that calculates the number of appearances of a letter a in a given string.
+Modify the function so it calculates the number of both letters a and A.
+*/
+
+let = calculateLetter = (string, upper, lower) => {
+  let counter =0;
+  for(let i=0; i<string.length;i++){
+    if(lower === string[i] || upper === string[i]){
+      counter++;
+    }
+  }
+  return counter;
+}
+console.log(calculateLetter('blaBlablaAAA','B','b'));
+////
+
+/*34. 
+Write a function that concatenates a given string given number of times.
+For example, if “abc” and 4 are given values, the function prints out abcabcabcabc.
+*/
+let concatNum = (string,n) => {
+  let newString = "";
+  for(let i=0; i<n;i++){
+    newString +=string;
+  }
+  return newString;
+}
+console.log(concatNum('vladan cupric ',6));
+
+/*35. 
+Write a function to count vowels in a provided string. If you are  not aware of indexOf function, try to use switch statement.
+*/
+let vowelCount = str1 =>{
+{
+  var vowel_list = 'aeiouAEIOU';
+  var vcount = 0;
+  
+  for(var x = 0; x < str1.length ; x++)
+  {
+    if (vowel_list.indexOf(str1[x]) !== -1)
+    {
+      vcount ++;;
+    }
+  }
+  return vcount;
+}
+}
+console.log(vowelCount("The quick brown fox"));
+
+/*36. 
+Write a function that combines two arrays by alternatingly taking elements.
+[‘a’, ’b’, ’c’], [1, 2, 3] -> [‘a’, 1, ’b’, 2, ’c’, 3]
+*/
+
+let array1 = ['a', 'b', 'c'],
+  array2 = [1,2,3],
+  result = [],
+  i,
+  l = Math.min(array1.length, array2.length);
+
+for (i = 0; i < l; i++) {
+  result.push(array1[i], array2[i]);
+}
+//result.push(...array1.slice(l), ...array2.slice(l));
+console.log(result);
+
+/*37. 
+Write a function that rotates a list by k elements.
+For example[1, 2, 3, 4, 5, 6] rotated by two becomes[3, 4, 5, 6, 1, 2]
+*/
+
+const rotate = (arr, count = 1) => {
+  return [...arr.slice(count, arr.length), ...arr.slice(0, count)];
+};
+const arr = [1,2,3,4,5];
+console.log(rotate(arr, 2));  // [3, 4, 5, 1, 2]
