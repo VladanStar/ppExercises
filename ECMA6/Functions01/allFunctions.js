@@ -524,42 +524,263 @@ console.log(rotate(arr, 2)); // [3, 4, 5, 1, 2]
 38.
 Write a program that prints a multiplication table for numbers up to 12.*/
 
-let  multipTable = a=> {
+let multipTable = (a) => {
   let i;
   let j;
-  str = '';
+  str = "";
   for (i = 1; i < a; i++) {
-      for (j = 1; j < a; j++) {
-          str += " " + i * j;
-      }
-      str = str + '\n';
+    for (j = 1; j < a; j++) {
+      str += " " + i * j;
+    }
+    str = str + "\n";
   }
   return str;
-}
+};
 console.log(multipTable(13));
 
 /*39. 
 Write a function to input temperature in Centigrade and convert to Fahrenheit.
 */
 
-let convertC =centigrade=>  fahrenheit = centigrade * 9 / 5 + 32;
- console.log(convertC(10));
+let convertC = (centigrade) => (fahrenheit = (centigrade * 9) / 5 + 32);
+console.log(convertC(10));
 
 /*40.
 Write a function to find the maximum element in array of numbers.Filter out all non - number elements.
 */
 
-let filterHighestNumber = array=> {
-  let isNumber = array.filter(function isNumber(value) 
-  {
-     return (typeof value === 'number' && !isNaN(value));
+let filterHighestNumber = (array) => {
+  let isNumber = array.filter(function isNumber(value) {
+    return typeof value === "number" && !isNaN(value);
   });
-console.log(isNumber);
-return  Math.max(...isNumber);
-}
-var array = [false, 5, 54, 56, 876, 678, 'e,', 'blab', '45345', NaN, undefined, 455445544554]
+  console.log(isNumber);
+  return Math.max(...isNumber);
+};
+var array = [
+  false,
+  5,
+  54,
+  56,
+  876,
+  678,
+  "e,",
+  "blab",
+  "45345",
+  NaN,
+  undefined,
+  455445544554,
+];
 console.log(filterHighestNumber(array));
 
 /* 41. 
 Write a function to find the maximum and minimum elements.Function returns an array.
 */
+let minMax = (array) => {
+  let arr = [];
+  let max = Math.max(...array);
+  arr.push(max);
+  let min = Math.min(...array);
+  arr.push(min);
+  return arr;
+};
+console.log(minMax([5, 54, 56, 876, 678, 455445544554]));
+
+/*42. 
+Write a function to find the median element of array.
+*/
+let midElem = (array) => {
+  let middle = (array.length - 1) / 2;
+  return middle % 2 === 0 ? array[middle] : "no middle element";
+};
+console.log(midElem([false, 5, 54, 54, 56546]));
+
+/*43. 
+Write a function to find the element that occurs most frequently.
+*/
+const arr1 = [3, "a", "a", "a", 2, 3, "a", 3, "a", 2, 4, 9, 3];
+let mf = 1;
+let m = 0;
+let item;
+for (let i = 0; i < arr1.length; i++) {
+  for (let j = i; j < arr1.length; j++) {
+    if (arr1[i] == arr1[j]) m++;
+    if (mf < m) {
+      mf = m;
+      item = arr1[i];
+    }
+  }
+  m = 0;
+}
+console.log(`${item} ( ${mf} times ) `);
+
+/* 44. 
+Write a function to find and return the first, middle and last element of an array if the array has odd number of elements.
+If number of elements is even, return just the first and the last.In other cases(empty array), input array should be returned.
+*/
+let returnElementsOfArray = (array) => {
+  let result = [];
+  firstElement = array[0];
+  lastElement = array[array.length - 1];
+  let middleValue = (array.length - 1) / 2
+  if (array.length % 2 === 0) {
+      return result = [firstElement, lastElement];
+  }
+  for (let i = 0; i < array.length; i++) {
+      let element = array[i]
+      if (array.length % 2 === 1) {
+          if (i === middleValue) {
+              let middleElement = element;
+              return result = [firstElement, middleElement, lastElement]
+          }
+      }
+  }
+}
+let array = [1, 2, 3, 4, 5, 6,6]
+let output = returnElementsOfArray(array)
+console.log(output);
+
+/*45. 
+Write a function to find the average of N elements.Make the function flexible to receive dynamic number or parameters.
+*/
+let average = (array) =>(array.reduce((total, arg) => total + arg, 0))/array.length;
+console.log(average([1, 2, 3, 4, 5]));
+
+/*46.
+Write a function to find all the numbers greater than the average.
+*/
+let greater =array=> {
+let average =(array.reduce((total, arg) => total + arg, 0))/array.length;
+let ar= array.filter(element => element>average);
+return ar;
+}
+console.log(greater([1,2,4,3,6,5]));
+
+/* 46.
+The body mass index(BMI) is the ratio of the weight of a person(in kilograms) to the square of the height(in meters).Write a function that 
+takes two parameters, weight and height, computes the BMI, and prints the corresponding BMI category:
+Starvation: less than 15
+Anorexic: less than 17.5
+Underweight: less than 18.5
+Ideal: greater than or equal to 18.5 but less than 25
+Overweight: greater than or equal to 25 but less than 30
+Obese: greater than or equal to 30 but less than 40
+Morbidly obese: greater than or equal to 40
+*/
+
+function bmi(weight, height) {
+  var bmi = weight / (height * height)
+  console.log(bmi)
+  switch (true) {
+      case (bmi < 15):
+          console.log("Anorexic");
+          break;
+      case (bmi < 17.5 && bmi > 15):
+          console.log("Starvation");
+          break;
+      case (bmi > 18.5 && bmi < 25):
+          console.log("Ideal");
+          break;
+      case (bmi > 25 && bmi < 30):
+          console.log("Overweight");
+          break;
+      case (bmi > 30 && bmi < 40):
+          console.log("Obese");
+          break;
+      case (bmi > 40):
+          console.log("Morbidly");
+          break;
+      default:
+          console.log("bmi not in scope");
+  }
+}
+var weight = 80;
+var height = 1.80
+
+
+
+/* 47. 
+Write a function that takes a list of strings and prints them, one per line, in a rectangular frame.:
+For example the list["Hello", "World", "in", "a", "frame"] gets printed as:
+*********
+* Hello *
+* World *
+* in    *
+* a     *
+* frame *
+*********
+*/
+
+let printHelloWorld = array => {
+  let largest = [];
+  let counter = 0;
+  let firsAndLastRows = [];
+  let middleRows = [];
+  let square = [];
+  for (let i = 0; i < array.length; i++) {
+      if (array[i].length > counter) {
+          counter = array[i].length;
+          largest = array[i]
+      }
+  }
+  for (let i = 0; i < largest.length; i++) {
+      if (i === 0 || i === counter - 1) {
+          firsAndLastRows += '**';
+      }
+      firsAndLastRows += '*';
+  }
+  firsAndLastRows += '\n'
+  for (let i = 0; i < array.length; i++) {
+      let emptyStringArray = '';
+      if (array[i].length < counter) {
+          let empty = counter - array[i].length
+          for (let j = 0; j < empty; j++) {
+              emptyStringArray += ' '
+          }
+      }
+      middleRows += '* ' + array[i] + emptyStringArray + ' *'
+      middleRows += '\n'
+  }
+  square = firsAndLastRows;
+  square += middleRows;
+  square += firsAndLastRows;
+  return square
+}
+var array = ["Hello", "World", "in", "a", "frame"];
+var output = printHelloWorld(array)
+console.log(output);
+
+/*48.
+Write a program that creates a string that represents an 8×8 grid, using newline characters to separate lines. 
+At each position of the grid there is either a space or a "#" character. The characters should form a chess board.
+Passing this string to console.log should show something like this:
+ # # # #
+# # # # 
+ # # # #
+# # # # 
+ # # # #
+# # # # 
+ # # # #
+# # # #
+*/
+
+let chessBoard= (parameter) =>{
+  let chessBoardRow = '';
+  let element = ''
+  let counter = 0;
+  for (let i = 0; i < parameter * parameter; i++) {
+      if (counter % 2 === 0) {
+          (i % 2 === 0) ? element = ' ' : element = "#";
+          chessBoardRow += element;
+      }
+      if (counter % 2 === 1) {
+          (i % 2 === 1) ? element = '#' : element = " ";
+          chessBoardRow += element;
+      }
+      if (i % parameter === 0) {
+          chessBoardRow += '\n'
+      }
+      counter++;
+    }
+    return chessBoardRow;
+  }
+  console.log(chessBoard(12));
