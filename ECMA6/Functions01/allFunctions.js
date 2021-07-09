@@ -430,19 +430,19 @@ let calculate = (number, parameter) => {
   }
   return counter;
 };
-console.log(calculate(3213324324,5));
+console.log(calculate(3213324324, 5));
 
 /*32.
 Write a function that calculates the sum of odd elements of a given array.
 */
 
-let sum = array => {
-  let newArray = array.filter(function(element, array){
-    return element %2 !==0;
+let sum = (array) => {
+  let newArray = array.filter(function (element, array) {
+    return element % 2 !== 0;
   });
-  return newArray.reduce((total, arg) =>total+arg,0)
-}
-console.log(sum([1,2,3,4,5]));
+  return newArray.reduce((total, arg) => total + arg, 0);
+};
+console.log(sum([1, 2, 3, 4, 5]));
 
 /*33. 
 Write a function that calculates the number of appearances of a letter a in a given string.
@@ -450,48 +450,46 @@ Modify the function so it calculates the number of both letters a and A.
 */
 
 let = calculateLetter = (string, upper, lower) => {
-  let counter =0;
-  for(let i=0; i<string.length;i++){
-    if(lower === string[i] || upper === string[i]){
+  let counter = 0;
+  for (let i = 0; i < string.length; i++) {
+    if (lower === string[i] || upper === string[i]) {
       counter++;
     }
   }
   return counter;
-}
-console.log(calculateLetter('blaBlablaAAA','B','b'));
+};
+console.log(calculateLetter("blaBlablaAAA", "B", "b"));
 ////
 
 /*34. 
 Write a function that concatenates a given string given number of times.
 For example, if “abc” and 4 are given values, the function prints out abcabcabcabc.
 */
-let concatNum = (string,n) => {
+let concatNum = (string, n) => {
   let newString = "";
-  for(let i=0; i<n;i++){
-    newString +=string;
+  for (let i = 0; i < n; i++) {
+    newString += string;
   }
   return newString;
-}
-console.log(concatNum('vladan cupric ',6));
+};
+console.log(concatNum("vladan cupric ", 6));
 
 /*35. 
 Write a function to count vowels in a provided string. If you are  not aware of indexOf function, try to use switch statement.
 */
-let vowelCount = str1 =>{
-{
-  var vowel_list = 'aeiouAEIOU';
-  var vcount = 0;
-  
-  for(var x = 0; x < str1.length ; x++)
+let vowelCount = (str1) => {
   {
-    if (vowel_list.indexOf(str1[x]) !== -1)
-    {
-      vcount ++;;
+    var vowel_list = "aeiouAEIOU";
+    var vcount = 0;
+
+    for (var x = 0; x < str1.length; x++) {
+      if (vowel_list.indexOf(str1[x]) !== -1) {
+        vcount++;
+      }
     }
+    return vcount;
   }
-  return vcount;
-}
-}
+};
 console.log(vowelCount("The quick brown fox"));
 
 /*36. 
@@ -499,8 +497,8 @@ Write a function that combines two arrays by alternatingly taking elements.
 [‘a’, ’b’, ’c’], [1, 2, 3] -> [‘a’, 1, ’b’, 2, ’c’, 3]
 */
 
-let array1 = ['a', 'b', 'c'],
-  array2 = [1,2,3],
+let array1 = ["a", "b", "c"],
+  array2 = [1, 2, 3],
   result = [],
   i,
   l = Math.min(array1.length, array2.length);
@@ -519,5 +517,49 @@ For example[1, 2, 3, 4, 5, 6] rotated by two becomes[3, 4, 5, 6, 1, 2]
 const rotate = (arr, count = 1) => {
   return [...arr.slice(count, arr.length), ...arr.slice(0, count)];
 };
-const arr = [1,2,3,4,5];
-console.log(rotate(arr, 2));  // [3, 4, 5, 1, 2]
+const arr = [1, 2, 3, 4, 5];
+console.log(rotate(arr, 2)); // [3, 4, 5, 1, 2]
+
+/* 
+38.
+Write a program that prints a multiplication table for numbers up to 12.*/
+
+let  multipTable = a=> {
+  let i;
+  let j;
+  str = '';
+  for (i = 1; i < a; i++) {
+      for (j = 1; j < a; j++) {
+          str += " " + i * j;
+      }
+      str = str + '\n';
+  }
+  return str;
+}
+console.log(multipTable(13));
+
+/*39. 
+Write a function to input temperature in Centigrade and convert to Fahrenheit.
+*/
+
+let convertC =centigrade=>  fahrenheit = centigrade * 9 / 5 + 32;
+ console.log(convertC(10));
+
+/*40.
+Write a function to find the maximum element in array of numbers.Filter out all non - number elements.
+*/
+
+let filterHighestNumber = array=> {
+  let isNumber = array.filter(function isNumber(value) 
+  {
+     return (typeof value === 'number' && !isNaN(value));
+  });
+console.log(isNumber);
+return  Math.max(...isNumber);
+}
+var array = [false, 5, 54, 56, 876, 678, 'e,', 'blab', '45345', NaN, undefined, 455445544554]
+console.log(filterHighestNumber(array));
+
+/* 41. 
+Write a function to find the maximum and minimum elements.Function returns an array.
+*/
